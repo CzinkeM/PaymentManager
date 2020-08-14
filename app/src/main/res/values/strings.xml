@@ -2,4 +2,5 @@
     <string name="app_name">PaymentManager</string>
     <string name="imgDescription">The image description.</string>
     <string name="textFiller">You cant see this</string>
+    <string name="buttonText">Add</string>
 </resources>
