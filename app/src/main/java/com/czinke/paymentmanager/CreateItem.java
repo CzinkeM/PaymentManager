@@ -1,12 +1,16 @@
 package com.czinke.paymentmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.czinke.paymentmanager.models.Item;
@@ -15,9 +19,20 @@ import java.util.Date;
 
 public class CreateItem extends AppCompatActivity {
 
+    EditText itemName;
+    EditText itemDescription;
+    EditText itemAmount;
+    EditText itemDate;
+
+    SwitchCompat itemRegularlyPayable;
+
     Spinner spinnerPriorities;
     Spinner spinnerCurrencies;
     Spinner spinnerIcons;
+
+    ProgressBar switchFillComplete;
+
+    Button btnCreateItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
