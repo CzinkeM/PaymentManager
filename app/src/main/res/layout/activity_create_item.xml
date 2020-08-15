@@ -20,25 +20,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
 
-    <Switch
-        android:id="@+id/switchOneTime"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchRegularly"
         android:layout_width="wrap_content"
-        android:layout_height="69dp"
-        android:scaleX="1"
-        android:scaleY="1"
+        android:layout_height="50dp"
         android:text="Regurarly"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.043"/>
 
     <Spinner
         android:id="@+id/spinnerPriority"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toEndOf="@+id/editTextDate"
@@ -49,18 +47,18 @@
         android:id="@+id/spinnerCurreny"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.392"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toEndOf="@+id/editTextAmountOfMoney"
+        app:layout_constraintTop_toBottomOf="@+id/editTextItemDescription"
         app:layout_constraintVertical_bias="0.038" />
 
     <Spinner
         android:id="@+id/spinnerIcon"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,16 +66,19 @@
         app:layout_constraintVertical_bias="0.463" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCreateItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/buttonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextItemDescription"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -91,7 +92,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextAmountOfMoney"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -101,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextItemDescription"
         app:layout_constraintVertical_bias="0.034" />
 
     <EditText
@@ -111,11 +112,14 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:ems="10"
+        android:focusable="false"
+        android:clickable="true"
+        android:editable="false"
         android:hint="Deadline"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAmountOfMoney"
         app:layout_constraintVertical_bias="0.044" />
 
     <ProgressBar
@@ -123,7 +127,7 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerIcon" />

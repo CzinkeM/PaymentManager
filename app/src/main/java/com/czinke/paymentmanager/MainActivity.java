@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     RecyclerView recyclerView;
     RecyclerAdapter menuAdapter;
     FloatingActionButton btnAdd;
+    public ArrayList<Item> AllItem = new ArrayList<>();
 
     private static final String TAG = "MainActivity";
 
@@ -35,26 +36,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     {
         recyclerView = findViewById(R.id.mainRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        menuAdapter = new RecyclerAdapter(this,getMyList(),this);
+        menuAdapter = new RecyclerAdapter(this,AllItem,this);
         recyclerView.setAdapter(menuAdapter);
     }
     public ArrayList<Item> getMyList()
     {
         ArrayList<Item> items = new ArrayList<>();
-
-        Item i = new Item();
-        i.setPriority(R.drawable.test1x1);
-        i.setIcon(R.drawable.test1x1);
-        i.setName("Item");
-        i.setMoney(75000);
-        items.add(i);
-
-        i = new Item();
-        i.setPriority(R.drawable.test1x1);
-        i.setIcon(R.drawable.test1x1);
-        i.setName("Item 2");
-        i.setMoney(2100);
-        items.add(i);
 
         return items;
     }
