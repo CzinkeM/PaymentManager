@@ -101,6 +101,7 @@ public class CreateItem extends AppCompatActivity{
                 item.setCurrency(spinnerCurrencies.getSelectedItem().toString());
                 item.setPriority(Integer.parseInt(spinnerPriorities.getSelectedItem().toString()));
                 Intent intent = new Intent(view.getContext(),MainActivity.class);
+                //Memóriában lévő adatbázishoz kell adni és azt kell mindig eltárolni
                 Bundle b = new Bundle();
                 b.putSerializable("item", item);
                 intent.putExtra("addedItem",b);

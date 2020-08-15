@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
         menuAdapter = new RecyclerAdapter(this,AllItem,this);
         recyclerView.setAdapter(menuAdapter);
     }
-    public ArrayList<Item> getMyList()
-    {
-        ArrayList<Item> items = new ArrayList<>();
-
-        return items;
-    }
 
     @Override
     public void ItemClickListener(int position) {
