@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
 
     RecyclerView recyclerView;
     RecyclerAdapter menuAdapter;
+
     private static final String TAG = "MainActivity";
 
     @Override
