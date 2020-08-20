@@ -3,12 +3,14 @@ package com.czinke.paymentmanager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.czinke.paymentmanager.database.AppDatabase;
 import com.czinke.paymentmanager.models.Item;
 import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 import com.czinke.paymentmanager.recycler_view_manager.RecyclerAdapter;
@@ -22,12 +24,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     RecyclerAdapter menuAdapter;
     FloatingActionButton btnAdd;
     public ArrayList<Item> AllItem = new ArrayList<>();
+    AppDatabase myAppDatabase;
+
 
     private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        myAppDatabase =  Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"itemdb").build();
         setContentView(R.layout.activity_main);
         GenerateRecyclerView();
         InitializeFloatingButton();
