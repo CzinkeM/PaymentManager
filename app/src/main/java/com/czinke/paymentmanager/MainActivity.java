@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
         myAppDatabase =  Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"itemdb").build();
         setContentView(R.layout.activity_main);
         GenerateRecyclerView();
-        InitializeFloatingButton();
+        //InitializeFloatingButton();
     }
     public void GenerateRecyclerView()
     {
-        recyclerView = findViewById(R.id.mainRecyclerView);
+        recyclerView = findViewById(R.id.recyclerViewMain);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         menuAdapter = new RecyclerAdapter(this,AllItem,this);
         recyclerView.setAdapter(menuAdapter);
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
     public void ItemClickListener(int position) {
         Toast.makeText(this,"click-click",Toast.LENGTH_SHORT).show();
     }
+    /*
     public void InitializeFloatingButton()
     {
         btnAdd = findViewById(R.id.buttonAdd);
@@ -60,4 +61,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick {
             }
         });
     }
+
+     */
 }

@@ -5,26 +5,16 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mainRecyclerView"
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonAdd"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="#00FFFFFF"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/btn_add"
-        app:layout_constraintBottom_toBottomOf="@+id/mainRecyclerView"
-        app:layout_constraintEnd_toEndOf="@+id/mainRecyclerView"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="@+id/mainRecyclerView"
-        app:layout_constraintTop_toTopOf="@+id/mainRecyclerView"
-        app:layout_constraintVertical_bias="0.98" />
-
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
