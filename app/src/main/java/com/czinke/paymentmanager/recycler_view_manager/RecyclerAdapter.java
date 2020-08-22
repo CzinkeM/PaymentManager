@@ -34,8 +34,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerHolder holder, int i) {
-        holder.imageViewPriority.setImageResource(items.get(i).getPriority());
-        holder.imageViewIcon.setImageResource(items.get(i).getIcon());
         holder.textViewName.setText(items.get(i).getName());
         holder.textViewMoney.setText(items.get(i).getMoney() + " ");
     }

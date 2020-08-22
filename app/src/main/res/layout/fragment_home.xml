@@ -26,6 +26,6 @@
         app:layout_constraintHorizontal_bias="0.90"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/recyclerViewMain"
-        app:layout_constraintVertical_bias="0.90" />
+        app:layout_constraintVertical_bias="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

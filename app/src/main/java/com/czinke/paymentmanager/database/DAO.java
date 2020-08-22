@@ -14,8 +14,6 @@ public interface DAO {
 
     @Insert
      public void AddItem(Item item);
-    @Insert
-    public void AddUser(Item item);
     @Query("select * from items")
     public List<Item> GetUsers();
     @Delete
