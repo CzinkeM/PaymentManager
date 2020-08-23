@@ -20,10 +20,9 @@ import lombok.Setter;
 
 @Entity(tableName = "items")
 public class Item implements Serializable {
-    @PrimaryKey
+
+    @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "item_name")
     private String name;
-    @ColumnInfo(name = "item_price")
-    private int money;
 }

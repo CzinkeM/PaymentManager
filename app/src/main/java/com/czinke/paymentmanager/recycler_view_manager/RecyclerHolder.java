@@ -12,16 +12,12 @@ import com.czinke.paymentmanager.R;
 
 public class RecyclerHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener{
 
-    ImageView imageViewPriority;
-    ImageView imageViewIcon;
     TextView textViewName;
-    TextView textViewMoney;
     OnItemClick onItemClick;
 
     public RecyclerHolder(@NonNull View itemView, OnItemClick OnItemClick) {
         super(itemView);
-        this.textViewName = itemView.findViewById(R.id.textItemName);
-        textViewMoney.setPaintFlags(Paint.FAKE_BOLD_TEXT_FLAG);
+        this.textViewName = itemView.findViewById(R.id.textViewName);
         this.onItemClick = OnItemClick;
         itemView.setOnLongClickListener(this);
     }

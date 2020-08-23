@@ -35,7 +35,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
     @Override
     public void onBindViewHolder(@NonNull RecyclerHolder holder, int i) {
         holder.textViewName.setText(items.get(i).getName());
-        holder.textViewMoney.setText(items.get(i).getMoney() + " ");
     }
 
     @Override

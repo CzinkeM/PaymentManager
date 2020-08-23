@@ -7,6 +7,7 @@ import androidx.room.Query;
 
 import com.czinke.paymentmanager.models.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -15,7 +16,7 @@ public interface DAO {
     @Insert
      public void AddItem(Item item);
     @Query("select * from items")
-    public List<Item> GetUsers();
+    public List<Item> GetItems();
     @Delete
     public void DeleteUser(Item item);
 }
