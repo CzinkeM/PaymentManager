@@ -39,6 +39,18 @@ public class HomeFragment extends Fragment implements OnItemClick, View.OnClickL
         floatingActionButton = view.findViewById(R.id.buttonAddItem);
         recyclerView = view.findViewById(R.id.recyclerViewMain);
         floatingActionButton.setOnClickListener(this);
+        Item item = Item.builder()
+                .name("To pay")
+                .build();
+        items.add(item);
+        item = Item.builder()
+                .name("Some internet fee")
+                .build();
+        items.add(item);
+        item = Item.builder()
+                .name("Payment")
+                .build();
+        items.add(item);
         GenerateRecyclerView();
 
         return view;
@@ -61,7 +73,7 @@ public class HomeFragment extends Fragment implements OnItemClick, View.OnClickL
         {
             case R.id.buttonAddItem:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
-                        new AddFragment()).addToBackStack(null).commit();
+                        new ListFragment()).addToBackStack(null).commit();
         }
     }
 }

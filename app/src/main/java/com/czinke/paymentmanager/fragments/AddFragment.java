@@ -40,7 +40,6 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         String name = textItemName.getText().toString();
-
         Item item = new Item();
         item.setName(name);
 

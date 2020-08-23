@@ -3,6 +3,8 @@
     <string name="imgDescription">The image description.</string>
     <string name="textFiller">You cant see this</string>
     <string name="buttonText">Add</string>
+    <string name="exampleText">Example</string>
+    <string name="exampleNumber">999999</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
