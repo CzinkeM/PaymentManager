@@ -1,6 +1,7 @@
 package com.czinke.paymentmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,16 +47,19 @@ public class MainActivity extends AppCompatActivity {
             {
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.fragmentContainer,new ListFragment()).commit();
+            fragmentManager.beginTransaction().add(R.id.fragmentContainer,new ListFragment(),"Home").commit();
         }
         floatingActionButton = this.findViewById(R.id.fabAddItem);
+        ListFragment homeFragment = (ListFragment) getSupportFragmentManager().findFragmentByTag("Home");
+        if(homeFragment != null && homeFragment.isVisible())
+            floatingActionButton.setVisibility(View.VISIBLE);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: click click");
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
                         new AddFragment()).addToBackStack(null).commit();
-                floatingActionButton.setVisibility(View.GONE);
+
             }
         });
     }

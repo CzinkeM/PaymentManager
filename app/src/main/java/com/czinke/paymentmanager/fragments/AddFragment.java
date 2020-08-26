@@ -48,7 +48,6 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         Log.d(TAG, "onClick: " + MainActivity.appDatabase.mydao().GetItems());
         MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
                 new ListFragment()).addToBackStack(null).commit();
-        MainActivity.floatingActionButton.setVisibility(View.VISIBLE);
         textItemName.setText("");
     }
 }
