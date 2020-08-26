@@ -17,7 +17,7 @@ public class RecyclerHolder extends RecyclerView.ViewHolder implements View.OnLo
 
     public RecyclerHolder(@NonNull View itemView, OnItemClick OnItemClick) {
         super(itemView);
-        this.textViewName = itemView.findViewById(R.id.textViewName);
+        this.textViewName = itemView.findViewById(R.id.content);
         this.onItemClick = OnItemClick;
         itemView.setOnLongClickListener(this);
     }

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
 import com.czinke.paymentmanager.fragments.dummy.DummyContent;
 
@@ -65,7 +66,7 @@ public class ListFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(MainActivity.appDatabase.mydao().GetItems()));
         }
         return view;
     }

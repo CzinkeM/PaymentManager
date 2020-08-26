@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.czinke.paymentmanager.database.AppDatabase;
 import com.czinke.paymentmanager.fragments.HomeFragment;
+import com.czinke.paymentmanager.fragments.ListFragment;
 import com.czinke.paymentmanager.models.Item;
 import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 import com.czinke.paymentmanager.recycler_view_manager.RecyclerAdapter;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity  {
             {
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.fragmentContainer,new HomeFragment()).commit();
+            fragmentManager.beginTransaction().add(R.id.fragmentContainer,new ListFragment()).commit();
         }
     }
 }
