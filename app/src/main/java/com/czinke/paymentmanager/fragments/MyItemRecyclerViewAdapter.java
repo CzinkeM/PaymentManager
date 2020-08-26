@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.czinke.paymentmanager.R;
-import com.czinke.paymentmanager.fragments.dummy.DummyContent.DummyItem;
 import com.czinke.paymentmanager.models.Item;
 
 import java.util.List;

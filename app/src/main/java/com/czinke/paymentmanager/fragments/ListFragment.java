@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
-import com.czinke.paymentmanager.fragments.dummy.DummyContent;
 
 /**
  * A fragment representing a list of Items.
@@ -55,7 +54,7 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_list_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {

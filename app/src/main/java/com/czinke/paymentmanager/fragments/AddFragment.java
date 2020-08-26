@@ -47,7 +47,8 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         Toast.makeText(getActivity(),"Item added to the database",Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onClick: " + MainActivity.appDatabase.mydao().GetItems());
         MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
-                new HomeFragment()).addToBackStack(null).commit();
+                new ListFragment()).addToBackStack(null).commit();
+        MainActivity.floatingActionButton.setVisibility(View.VISIBLE);
         textItemName.setText("");
     }
 }
