@@ -52,8 +52,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 Item item = MainActivity.appDatabase.mydao().GetItems().get(mHolder.getAdapterPosition());
                 MainActivity.appDatabase.mydao().DeleteItem(item);
 
-                Fragment frg = null;
-                frg = MainActivity.fragmentManager.findFragmentByTag("Home");
+                Fragment frg = MainActivity.fragmentManager.findFragmentByTag("Home");
                 final FragmentTransaction ft = MainActivity.fragmentManager.beginTransaction();
                 ft.detach(frg);
                 ft.attach(frg);

@@ -21,7 +21,7 @@ import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 /**
  * A fragment representing a list of Items.
  */
-public class ListFragment extends Fragment implements OnItemClick {
+public class ListFragment extends Fragment {
 
     private static final String TAG = "ListFragment";
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -65,10 +65,5 @@ public class ListFragment extends Fragment implements OnItemClick {
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(MainActivity.appDatabase.mydao().GetItems()));
         }
         return view;
-    }
-
-    @Override
-    public void ItemClickListener(int position) {
-        Log.d(TAG, "ItemClickListener: " + position);
     }
 }
