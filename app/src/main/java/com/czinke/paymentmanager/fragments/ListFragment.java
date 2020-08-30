@@ -2,21 +2,17 @@ package com.czinke.paymentmanager.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
-import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 
 /**
  * A fragment representing a list of Items.

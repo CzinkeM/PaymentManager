@@ -1,13 +1,5 @@
 package com.czinke.paymentmanager.fragments;
 
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Application;
-import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +7,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
 import com.czinke.paymentmanager.models.Item;
-import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.sql.StatementEvent;
 
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>{
     private static final String TAG = "Adapter";

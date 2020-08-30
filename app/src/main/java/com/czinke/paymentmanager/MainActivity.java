@@ -1,17 +1,16 @@
 package com.czinke.paymentmanager;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.room.Room;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
+
 import com.czinke.paymentmanager.database.AppDatabase;
 import com.czinke.paymentmanager.fragments.AddFragment;
 import com.czinke.paymentmanager.fragments.ListFragment;
-import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity{

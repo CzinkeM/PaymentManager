@@ -1,9 +1,6 @@
 package com.czinke.paymentmanager.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
 import com.czinke.paymentmanager.models.Item;
-
-import java.util.Random;
 
 public class AddFragment extends Fragment implements View.OnClickListener {
 

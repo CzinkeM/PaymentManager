@@ -7,7 +7,6 @@ import androidx.room.Query;
 
 import com.czinke.paymentmanager.models.Item;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao
