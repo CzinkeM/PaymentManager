@@ -1,23 +1,28 @@
 package com.czinke.paymentmanager.fragments;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Application;
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.czinke.paymentmanager.R;
 import com.czinke.paymentmanager.models.Item;
+import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
-public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
+import javax.sql.StatementEvent;
 
+public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>{
+    private static final String TAG = "Adapter";
     private final List<Item> mValues;
 
     public MyItemRecyclerViewAdapter(List<Item> items) {
@@ -28,13 +33,22 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_sample, parent, false);
-        return new ViewHolder(view);
+      final ViewHolder mHolder = new ViewHolder(view);
+        mHolder.mCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String s = String.valueOf(mHolder.getAdapterPosition());
+                Toast.makeText(view.getContext(),s,Toast.LENGTH_SHORT).show();
+            }
+        });
+        return mHolder;
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mContentView.setText(mValues.get(position).getName());
+        holder.mImageView.setImageResource(R.drawable.ic_launcher_foreground);
     }
 
     @Override
@@ -46,11 +60,15 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final View mView;
         public final TextView mContentView;
         public Item mItem;
+        public CardView mCardView;
+        public ImageView mImageView;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             mContentView = (TextView) view.findViewById(R.id.content);
+            mCardView = (CardView) view.findViewById(R.id.CardView);
+            mImageView = (ImageView) view.findViewById(R.id.imageView);
         }
 
         @Override

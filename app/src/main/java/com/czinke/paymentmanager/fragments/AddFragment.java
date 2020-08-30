@@ -39,15 +39,22 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        String name = textItemName.getText().toString();
-        Item item = new Item();
-        item.setName(name);
+        if(textItemName.getText().toString().matches(""))
+        {
+            Toast.makeText(getContext(),"Adj meg egy nevet",Toast.LENGTH_SHORT).show();
+        }else{
 
-        MainActivity.appDatabase.mydao().AddItem(item);
-        Toast.makeText(getActivity(),"Item added to the database",Toast.LENGTH_SHORT).show();
-        Log.d(TAG, "onClick: " + MainActivity.appDatabase.mydao().GetItems());
-        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
-                new ListFragment()).addToBackStack(null).commit();
-        textItemName.setText("");
+            String name = textItemName.getText().toString();
+            Item item = new Item();
+            item.setName(name);
+            MainActivity.appDatabase.mydao().AddItem(item);
+            Toast.makeText(getActivity(),"Item added to the database",Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "onClick: " + item.getName());
+            Log.d(TAG, "onClick: " + MainActivity.appDatabase.mydao().GetItems());
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
+                    new ListFragment()).addToBackStack(null).commit();
+            textItemName.setText("");
+        }
+
     }
 }

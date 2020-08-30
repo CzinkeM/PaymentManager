@@ -8,27 +8,24 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
+import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 
 /**
  * A fragment representing a list of Items.
  */
-public class ListFragment extends Fragment {
+public class ListFragment extends Fragment implements OnItemClick {
 
-    // TODO: Customize parameter argument names
+    private static final String TAG = "ListFragment";
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
-
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public ListFragment() {
     }
 
@@ -68,5 +65,10 @@ public class ListFragment extends Fragment {
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(MainActivity.appDatabase.mydao().GetItems()));
         }
         return view;
+    }
+
+    @Override
+    public void ItemClickListener(int position) {
+        Log.d(TAG, "ItemClickListener: " + position);
     }
 }
