@@ -18,5 +18,6 @@ public interface DAO {
     @Query("select * from items")
     public List<Item> GetItems();
     @Delete
-    public void DeleteUser(Item item);
+    public void DeleteItem(Item item);
+
 }

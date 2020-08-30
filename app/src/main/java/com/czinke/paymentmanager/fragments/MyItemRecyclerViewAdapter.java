@@ -1,6 +1,8 @@
 package com.czinke.paymentmanager.fragments;
 
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Application;
@@ -13,10 +15,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.czinke.paymentmanager.MainActivity;
 import com.czinke.paymentmanager.R;
 import com.czinke.paymentmanager.models.Item;
 import com.czinke.paymentmanager.recycler_view_manager.OnItemClick;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.StatementEvent;
@@ -39,6 +43,23 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             public void onClick(View view) {
                 String s = String.valueOf(mHolder.getAdapterPosition());
                 Toast.makeText(view.getContext(),s,Toast.LENGTH_SHORT).show();
+            }
+        });
+        mHolder.mCardView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+                Item item = MainActivity.appDatabase.mydao().GetItems().get(mHolder.getAdapterPosition());
+                MainActivity.appDatabase.mydao().DeleteItem(item);
+
+                Fragment frg = null;
+                frg = MainActivity.fragmentManager.findFragmentByTag("Home");
+                final FragmentTransaction ft = MainActivity.fragmentManager.beginTransaction();
+                ft.detach(frg);
+                ft.attach(frg);
+                ft.commit();
+                Toast.makeText(view.getContext(),"item deleted", Toast.LENGTH_SHORT).show();
+                return true;
             }
         });
         return mHolder;
