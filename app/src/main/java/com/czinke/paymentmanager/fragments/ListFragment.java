@@ -18,8 +18,6 @@ import com.czinke.paymentmanager.R;
  * A fragment representing a list of Items.
  */
 public class ListFragment extends Fragment {
-
-    private static final String TAG = "ListFragment";
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     public ListFragment() {
