@@ -8,4 +8,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="onClick">Click-click</string>
+
+    <string name="addTitle">Create Item</string>
+    <string name="addName">Name</string>
+    <string name="addDescription">Description</string>
+    <string name="addNumber">Amount</string>
+    <string name="addButton">Create</string>
 </resources>
