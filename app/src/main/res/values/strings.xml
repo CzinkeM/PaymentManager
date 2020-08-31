@@ -14,4 +14,9 @@
     <string name="addDescription">Description</string>
     <string name="addNumber">Amount</string>
     <string name="addButton">Create</string>
+    <!--Error messages-->
+    <string name="errorNameMissing">Please give a name</string>
+    <string name="errorDesMissing">Please give a des</string>
+    <string name="errorAmountMissing">Please give an amount</string>
+
 </resources>

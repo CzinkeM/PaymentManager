@@ -25,4 +25,8 @@ public class Item implements Serializable {
     private int id;
     @ColumnInfo(name = "item_name")
     private String name;
+    @ColumnInfo(name="item_des")
+    private String des;
+    @ColumnInfo(name ="item_amount")
+    private int amount;
 }
