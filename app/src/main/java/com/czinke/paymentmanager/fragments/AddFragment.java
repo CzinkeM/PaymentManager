@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresPermission;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.czinke.paymentmanager.MainActivity;
@@ -33,6 +34,8 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     private Spinner spinnerPriority;
 
     private Button buttonAdd;
+
+    private ConstraintLayout mainLayout;
     private static final String TAG = "AddFragment";
 
 
@@ -48,8 +51,12 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         editTextItemDes = view.findViewById(R.id.textItemDes);
         editTextItemAmount = view.findViewById(R.id.textItemNumber);
         buttonAdd = view.findViewById(R.id.buttonCreateItem);
+        spinnerPriority = view.findViewById(R.id.spinnerPriority);
+        spinnerCurrency = view.findViewById(R.id.spinnerCurrency);
+        mainLayout = view.findViewById(R.id.fragment_addMain);
         buttonAdd.setOnClickListener(this);
-        InitSpinners(getContext(),getView());
+
+        InitSpinners(getContext());
         return view;
     }
 
@@ -89,17 +96,15 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         Toast.makeText(getContext(),string,Toast.LENGTH_SHORT).show();
     }
 
-    private void InitSpinners(Context context, View view)
+    private void InitSpinners(Context context)
     {
-        spinnerPriority = (Spinner) view.findViewById(R.id.spinnerPriority);
-        spinnerCurrency = (Spinner) view.findViewById(R.id.spinnerCurrency);
         ArrayAdapter<CharSequence> adapterPriority = ArrayAdapter
                 .createFromResource(context,R.array.priorityLevels, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapterCurrency = ArrayAdapter
-                .createFromResource(context,R.array.currencies,android.R.layout.simple_spinner_item);
+                .createFromResource(context,R.array.currencies,R.layout.spinner_currency);
 
         adapterPriority.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adapterCurrency.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterCurrency.setDropDownViewResource(R.layout.spinner_dropdown);
 
         spinnerPriority.setAdapter(adapterPriority);
         spinnerCurrency.setAdapter(adapterCurrency);

@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.czinke.paymentmanager.models.Item;
 
-@Database(entities = {Item.class},version = 1)
+@Database(entities = {Item.class},version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     public static Migration migration_1_2 = new Migration(2,3) {
