@@ -55,14 +55,14 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         else{
             String name = editTextItemName.getText().toString();
             String des = editTextItemDes.getText().toString();
-            int amount = Integer.parseInt(editTextItemAmount.getText().toString());
+            String amount = editTextItemAmount.getText().toString();
             Item item = new Item();
             item.setName(name);
             item.setDes(des);
             item.setAmount(amount);
             MainActivity.appDatabase.mydao().AddItem(item);
             Toast.makeText(getActivity(),"Item added to the database",Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "onClick: " + item.getName());
+            Log.d(TAG, "onClick: " + item.getName() + " " + item.getAmount());
             Log.d(TAG, "onClick: " + MainActivity.appDatabase.mydao().GetItems());
             MainActivity.fragmentManager.beginTransaction().replace(R.id.fragmentContainer,
                     new ListFragment()).addToBackStack(null).commit();

@@ -61,7 +61,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mContentView.setText(mValues.get(position).getName());
-        //holder.mItemAmount.setText(mValues.get(position).getAmount());
+        holder.mItemAmount.setText(mValues.get(position).getAmount());
         holder.mImageView.setImageResource(R.drawable.ic_launcher_foreground);
     }
 
@@ -73,7 +73,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mContentView;
-        //public final TextView mItemAmount;
+        public final TextView mItemAmount;
         public Item mItem;
         public CardView mCardView;
         public ImageView mImageView;
@@ -82,7 +82,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             super(view);
             mView = view;
             mContentView = (TextView) view.findViewById(R.id.content);
-            //mItemAmount = (TextView) view.findViewById(R.id.item_number);
+            mItemAmount = (TextView) view.findViewById(R.id.item_number);
             mCardView = (CardView) view.findViewById(R.id.CardView);
             mImageView = (ImageView) view.findViewById(R.id.imageView);
         }

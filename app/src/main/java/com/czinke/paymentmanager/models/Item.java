@@ -28,5 +28,5 @@ public class Item implements Serializable {
     @ColumnInfo(name="item_des")
     private String des;
     @ColumnInfo(name ="item_amount")
-    private int amount;
+    private String amount;
 }

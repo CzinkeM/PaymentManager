@@ -25,8 +25,14 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
+
         appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,
-                "itemDB").allowMainThreadQueries().build();
+                "itemDB")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
+
+
         if(findViewById(R.id.fragmentContainer) != null)
         {
             if(savedInstanceState != null)
