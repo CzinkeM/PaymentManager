@@ -33,4 +33,6 @@ public class Item implements Serializable {
     private int icon;
     @ColumnInfo(name = "item_priority")
     private int priority;
+    @ColumnInfo(name = "item_currency")
+    private char currency;
 }
