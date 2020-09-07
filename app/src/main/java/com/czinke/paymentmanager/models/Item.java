@@ -29,4 +29,8 @@ public class Item implements Serializable {
     private String des;
     @ColumnInfo(name ="item_amount")
     private String amount;
+    @ColumnInfo(name = "item_img")
+    private int icon;
+    @ColumnInfo(name = "item_priority")
+    private int priority;
 }
